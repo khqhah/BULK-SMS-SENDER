@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#f0f0f0"
+             Title="Send Message from CSV"             
+             x:Class="SMS.SendMessageCSV">
+    <StackLayout Padding="20" Spacing="20">
+
+        <!-- File Upload Button -->
+
+
+        <ImageButton Source="upload_icon.png" HeightRequest="80" WidthRequest="80" Margin="0" Clicked="Button_Clicked" />
+
+
+        <!--<Button Text="Upload CSV File"
+                BackgroundColor="#8C3CCC"
+                ImageSource="upload_icon.png"                
+                TextColor="White"
+                CornerRadius="10"
+                FontSize="20"
+                HeightRequest="50"
+                Clicked="Button_Clicked"
+                Margin="0,20,0,0"/>-->
+
+        <!-- ListView to Display CSV Data -->
+        <CollectionView x:Name="ContactsListView"
+                        HeightRequest="380" HorizontalScrollBarVisibility="Default">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="5"
+                           BorderColor="#8C3CCC"
+                           Padding="10"
+                           HasShadow="False"
+                           Margin="0,10,0,0">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding UserName}"
+                                   FontSize="18"
+                                   VerticalOptions="Center"
+                                   TextColor="#333"
+                                   HorizontalOptions="StartAndExpand"
+                                   WidthRequest="150"/>
+                            <Label Text="{Binding Contacts}"
+                                   FontSize="18"
+                                   HorizontalTextAlignment="End"
+                                   HorizontalOptions="EndAndExpand"
+                                   VerticalOptions="Center"
+                                   TextColor="#333"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Message Entry -->
+
+        <Frame CornerRadius="5"
+               BorderColor="#8C3CCC"
+               Padding="0"
+               HasShadow="False"
+               Margin="0,10,0,0">
+            <Editor Placeholder="Enter your message"
+                    FontSize="18"
+                    x:Name="txtMessage"
+                    BackgroundColor="White"
+                    HeightRequest="100"
+                    Margin="5"/>
+        </Frame>
+
+        <!-- Send Button -->
+        <Button Text="Send Messages"
+                BackgroundColor="#8C3CCC"
+                TextColor="White"
+                CornerRadius="10"
+                FontSize="20"
+                HeightRequest="50"
+                Clicked="OnSendButtonClicked"
+                Margin="0,20,0,0"/>
+    </StackLayout>
+</ContentPage>

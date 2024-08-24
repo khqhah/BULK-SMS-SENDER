@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#f0f0f0"
+             x:Class="SMS.DashboardPage">
+
+    <StackLayout Padding="20" Spacing="20">
+        <!-- Header -->
+        <Frame BackgroundColor="#007AFF"
+               CornerRadius="15"
+               Padding="15"
+               HasShadow="True"
+               HorizontalOptions="FillAndExpand">
+            <Label Text="Dashboard"
+                   FontSize="32"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+        </Frame>
+
+        <!-- User Info Card -->
+        <Frame BackgroundColor="#fff"
+               CornerRadius="15"
+               Padding="20"
+               HasShadow="True">
+            <StackLayout Orientation="Horizontal" Spacing="15" VerticalOptions="StartAndExpand">
+                <Image Source="user_profile.png"
+                       HeightRequest="60"
+                       WidthRequest="60"
+                       Aspect="AspectFill"
+                       VerticalOptions="Center"/>
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <Label Text="Welcome, User!"
+                           FontSize="24"                          
+                           VerticalOptions="StartAndExpand"
+                           HorizontalOptions="CenterAndExpand"
+                           TextColor="#333"
+                           FontAttributes="Bold"/>
+                    <Label Text="To Eagle Solar Messaging Application"
+                           FontSize="14"
+                           TextColor="#666"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+        <!-- Actions -->
+        <Grid ColumnSpacing="20" RowSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Row="0" Grid.Column="0"
+                   BackgroundColor="#007AFF"
+                   CornerRadius="15"
+                   HasShadow="True"
+                   Padding="15">
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Label Text="Send Message"
+                           x:Name="SendMessage"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           FontSize="20"
+                           TextColor="White"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Frame>
+
+            <Frame Grid.Row="0" Grid.Column="1"
+                   BackgroundColor="#34C759"
+                   CornerRadius="15"
+                   HasShadow="True"
+                   Padding="15">
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Label Text="Send Message to Parties"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                           FontSize="20"
+                           TextColor="White"
+                           HorizontalOptions="Center"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_3" />
+                    </StackLayout.GestureRecognizers>
+                
+    </StackLayout>
+            </Frame>
+
+            <Frame Grid.Row="1" Grid.Column="0"
+                   BackgroundColor="#FF9500"
+                   CornerRadius="15"
+                   HasShadow="True"
+                   Padding="15">
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Label Text="Send Message from CSV"
+                           FontSize="20"
+                           HorizontalTextAlignment="Center"                           
+                           TextColor="White"
+                           HorizontalOptions="Center"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Frame>
+
+            <Frame Grid.Row="1" Grid.Column="1"
+                   BackgroundColor="#FF3B30"
+                   CornerRadius="15"
+                   HasShadow="True"
+                   Padding="15">
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Group Messages"
+                           FontSize="20"
+                           TextColor="White"                           
+                           HorizontalOptions="CenterAndExpand"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </StackLayout>
+</ContentPage>

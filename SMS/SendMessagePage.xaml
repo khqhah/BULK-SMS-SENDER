@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#f0f0f0"
+             Title="Send Message"             
+             x:Class="SMS.SendMessagePage">
+    <StackLayout Padding="20" Spacing="20" HeightRequest="500">
+        <Frame BackgroundColor="#fff"
+               CornerRadius="15"
+               Padding="20"
+               HasShadow="True">
+            <StackLayout>
+
+
+                <ActivityIndicator x:Name="LoadingIndicator" 
+                           IsRunning="False"
+                           IsVisible="False"
+                           Color="#8C3CCC"
+                           HorizontalOptions="Center"
+                           VerticalOptions="CenterAndExpand" />
+                
+
+                <Label Text="Send a Message"
+                       FontSize="24"
+                       TextColor="#333"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"/>
+
+                <Frame CornerRadius="5"
+                       BorderColor="#8C3CCC"
+                       Padding="0"
+                       HasShadow="False"
+                       Margin="0,10,0,0">
+                    <Entry Placeholder="Enter phone number"
+                           FontSize="18"
+                           BackgroundColor="White"
+                           Keyboard="Telephone"
+                           x:Uid="txtPhone"
+                           x:Name="txtPhone"
+                           Margin="5"/>
+                </Frame>
+
+                <Frame CornerRadius="5"
+                       BorderColor="#8C3CCC"
+                       Padding="0"
+                       HasShadow="False"
+                       Margin="0,10,0,0">
+                    <Editor Placeholder="Enter your message"
+                            FontSize="18"
+                            x:Name="txtMessage"
+                            BackgroundColor="White"
+                            HeightRequest="100"
+                            Margin="5"/>
+                </Frame>
+
+                <Button Text="Send"
+                        BackgroundColor="#8C3CCC"
+                        TextColor="White"
+                        CornerRadius="10"
+                        FontSize="20"
+                        HeightRequest="50"
+                        Clicked="OnSendButtonClicked"
+                        x:Name="btnSend"
+                        Margin="0,20,0,0"/>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

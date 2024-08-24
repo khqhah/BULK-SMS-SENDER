@@ -1,0 +1,1 @@
+C:\Users\IAM\source\repos\SMS\SMS.WinUI\SMS.WinUI.csproj;x64

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SMS.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:SMS"
+    Shell.FlyoutBehavior="Flyout"
+    Title="SMS">
+
+    <FlyoutItem Title="Dashboard" Icon="dashboard_icon.png">
+        <ShellContent ContentTemplate="{DataTemplate local:DashboardPage}" />
+    </FlyoutItem>
+    <!--<FlyoutItem Title="Send Message" Icon="send_icon.png">
+    <ShellContent ContentTemplate="{DataTemplate local:SendMessagePage}" />
+</FlyoutItem>-->
+    <FlyoutItem Title="Send Message" Icon="send_icon.png">
+        <ShellContent Route="SendMessage" ContentTemplate="{DataTemplate local:SendMessagePage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Send Message from CSV" Icon="send_icon.png">
+        <ShellContent Route="SendMessageCSV" ContentTemplate="{DataTemplate local:SendMessageCSV}" />
+    </FlyoutItem>
+    
+    
+    <FlyoutItem Title="Group Messages" Icon="contacts_icon.png">
+        <ShellContent Route="ContactsPage" ContentTemplate="{DataTemplate local:ContactsPage}" />
+    </FlyoutItem>
+
+
+    <FlyoutItem Title="Send Message To Parties" Icon="contacts_icon.png">
+        <ShellContent Route="SendMessageDb" ContentTemplate="{DataTemplate local:SendMessageDb}" />
+    </FlyoutItem>
+
+</Shell>
